@@ -1,0 +1,30 @@
+{
+  "name": "reliability_gate",
+  "status": "development_validated_not_frozen",
+  "exclude_experiments": ["F"],
+  "development_dataset": "memlens_repro/data/memlens_agent_subset/dataset_32k.json",
+  "formal_holdout_ids": "holdout_validation/protocol/holdout_ids.json",
+  "frozen_base_dev": "runtime_routing/results/runtime_specialists/predictions.json",
+  "visual_top_k": 3,
+  "primary_subtypes": ["entity", "previnfo"],
+  "gate": {
+    "normalize_unicode": "NFKC",
+    "normalize_case": true,
+    "strip_punctuation": true,
+    "reject_normalized_refusal": "insufficient information",
+    "preserve_base_when_rank1_supports_base_only": true,
+    "direct_support_match": "normalized_complete_token_sequence"
+  },
+  "primary_endpoint": "holdout_594_gated_vs_baseline_paired_sub_em_v21",
+  "primary_test": "two_sided_exact_mcnemar",
+  "alpha": 0.05,
+  "bootstrap_seed": 20260621,
+  "formal_holdout_runs": 1,
+  "forbidden_prompt_patterns": [
+    "needle_images",
+    "haystack_images",
+    "answer_session_ids",
+    "reference_answer"
+  ]
+}
+

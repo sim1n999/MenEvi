@@ -1,0 +1,38 @@
+{
+  "name": "holdout_validation",
+  "status": "preregistered_not_run",
+  "exclude_experiments": ["F"],
+  "datasets": {
+    "full_32k": "memlens_repro/data/memlens/dataset_32k.json",
+    "touched_dev_32k": "memlens_repro/data/memlens_agent_subset/dataset_32k.json",
+    "expected_full_count": 789,
+    "expected_dev_count": 195,
+    "expected_holdout_count": 594,
+    "holdout_rule": "full question_ids minus touched development question_ids"
+  },
+  "models": {
+    "text": "Qwen2.5-7B-Instruct",
+    "vision": "Qwen2.5-VL-7B-Instruct",
+    "temperature": 0.0,
+    "do_sample": false,
+    "load_in_4bit": true
+  },
+  "primary_endpoint": "holdout_594_holdout_candidate_vs_baseline_paired_sub_em_v21",
+  "primary_test": "two_sided_exact_mcnemar",
+  "alpha": 0.05,
+  "bootstrap_seed": 20260620,
+  "visual_top_k": 3,
+  "forbidden_prompt_patterns": [
+    "needle_images",
+    "haystack_images",
+    "answer_session_ids",
+    "reference_answer"
+  ],
+  "required_integrity": {
+    "non_target_predictions_frozen": true,
+    "prompt_leakage_hits": 0,
+    "holdout_membership_label_independent": true,
+    "formal_holdout_runs": 1
+  }
+}
+

@@ -1,0 +1,13 @@
+{
+  "scope": "fixed_method_secondary_full_inventory",
+  "question_count_per_length": 789,
+  "lengths": ["32k", "64k", "128k", "256k"],
+  "node_budget": 120,
+  "packet_budget": 80,
+  "visual_top_k": 3,
+  "target_subtypes": ["entity", "previnfo"],
+  "temperature": 0,
+  "do_sample": false,
+  "evaluator": "eval_v2.1"
+}
+

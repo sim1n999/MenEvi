@@ -1,0 +1,64 @@
+{
+  "experiment": "E_hybrid_subtype_routing",
+  "date": "2026-06-20",
+  "dataset": "memlens_repro/data/memlens_agent_subset/dataset_32k.json",
+  "inputs": {
+    "retrieval_budget120": "kg_retrieval/results/retrieval_budget120/retrieved_subgraphs",
+    "c_packets": "answer_evidence/results/packets_packet80/packets",
+    "d_packets": "visual_evidence/results/visual_ocr_packets_packet80/packets",
+    "c_predictions": "answer_evidence/results/kg_answer_focused_packet80/predictions.json",
+    "d_predictions": "visual_evidence/results/kg_visual_ocr_packet80/predictions.json"
+  },
+  "variants": {
+    "E1_offline": "merge existing C/D predictions by subtype",
+    "E2_runtime_cd": "route each question to a C-style or D-style packet and generate once",
+    "E3_arithmetic repair_specialists": "route duration/arithmetic to specialist prompts, model answers",
+    "E3_arithmetic repair_tools": "high-confidence duration comparison plus arithmetic model-selector/calculator",
+    "E1_cross_validated": "stratified 5-fold route selection using only training folds"
+  },
+  "routing_policy": {
+    "use_d": [
+      "entity",
+      "previnfo",
+      "knowledge_update",
+      "temporal_info_extraction"
+    ],
+    "use_c": [
+      "answer_refusal",
+      "entity_resolution",
+      "counting",
+      "order_ranking"
+    ],
+    "use_duration_specialist": [
+      "duration_comparison"
+    ],
+    "use_arithmetic_specialist": [
+      "arithmetic"
+    ]
+  },
+  "outputs": {
+    "offline": "runtime_routing/results/hybrid_subtype_routing",
+    "specialist_packets": "runtime_routing/results/specialist_packets",
+    "runtime_cd": "runtime_routing/results/runtime_cd",
+    "runtime_specialists": "runtime_routing/results/runtime_specialists",
+    "runtime_specialists_override": "runtime_routing/results/runtime_specialists_override",
+    "runtime_comparison": "runtime_routing/results/runtime_comparison_v2",
+    "cross_validated": "runtime_routing/results/hybrid_cross_validated_routing"
+  },
+  "safety": {
+    "use_reference_answers_for_routing": false,
+    "use_answer_session_ids_for_specialists": false,
+    "duration_override_requires": "high confidence",
+    "arithmetic_execution": "model candidate selection followed by deterministic calculator",
+    "mixed_currency_action": "fallback to model answer",
+    "report_post_hoc_and_cross_validated_separately": true
+  },
+  "success_criteria": {
+    "runtime_cd_overall_sub_em_v2": 0.4,
+    "runtime_cd_gap_from_offline_e1_max": 0.02,
+    "runtime_answer_refusal_accuracy_v2": 0.95,
+    "specialist_overall_no_worse_than_runtime_cd": true,
+    "duration_comparison_target": 0.4,
+    "arithmetic_target": 0.3
+  }
+}

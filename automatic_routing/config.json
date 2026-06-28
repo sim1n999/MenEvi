@@ -1,0 +1,9 @@
+{
+  "dataset": "memlens_repro/data/memlens/dataset_32k.json",
+  "question_count": 789,
+  "methods": ["gold", "llm_zero_shot", "rules", "universal_c"],
+  "router_visible_fields": ["question"],
+  "downstream_type_source": "derived_from_predicted_subtype",
+  "primary_contrast": "llm_zero_shot_vs_gold",
+  "analysis_role": "post_holdout_explanatory"
+}

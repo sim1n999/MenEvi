@@ -1,0 +1,38 @@
+# Local paths and secrets
+configs/local_paths.env
+.env
+*.key
+
+# Large local assets
+memlens_repro/data/
+**/results/
+!/results/
+/results/*
+!/results/README.md
+!/results/789_full_repo_main_results.csv
+!/results/789_full_length_curve.csv
+**/outputs/
+**/logs/
+**/generated/
+**/caption_cache*.jsonl
+**/predictions*.json
+**/traces.json
+**/visual_inspection/
+**/visual_specialist/
+**/visual_packets/
+**/kg_memory/
+**/retrieval_budget*/
+
+# Python/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+
+
+
+

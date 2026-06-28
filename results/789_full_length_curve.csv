@@ -1,0 +1,5 @@
+scope,dataset_n,length,n,p0_sub_em_pct,p1_sub_em_pct,delta_sub_em_pp,p0_token_f1_pct,p1_token_f1_pct,wins,losses,mcnemar_exact_p,source_file
+789题完整数据集,789,32k,789,43.853,47.275,3.42205,46.5971,49.8966,42,15,0.000460005,length_curve/results/dual_gpu1_validation/paper_length_curve.csv
+789题完整数据集,789,64k,789,40.4309,43.853,3.42205,43.435,46.8618,38,11,0.000141971,length_curve/results/dual_gpu1_validation/paper_length_curve.csv
+789题完整数据集,789,128k,789,40.0507,42.3321,2.28137,43.6108,45.8343,32,14,0.0113516,length_curve/results/dual_gpu1_validation/paper_length_curve.csv
+789题完整数据集,789,256k,789,40.0507,43.853,3.80228,42.7664,46.477,40,10,2.38613e-05,length_curve/results/dual_gpu1_validation/paper_length_curve.csv

@@ -1,0 +1,9 @@
+{
+  "question_count_per_length": 789,
+  "lengths": ["32k", "64k", "128k", "256k"],
+  "gpu_poll_seconds": 0.5,
+  "separate_offline_online_cost": true,
+  "include_32k_strong_baselines": true,
+  "profile_scope": "fresh_dedicated_artifacts"
+}
+

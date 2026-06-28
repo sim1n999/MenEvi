@@ -1,0 +1,32 @@
+{
+  "name": "KG retrieval baseline - Soft-Refusal KG Answering",
+  "created": "2026-06-19",
+  "dataset": "memlens_repro/data/memlens_agent_subset/dataset_32k.json",
+  "source_graph_dir": "memlens_repro/outputs/kg_memory_32k_agent/graphs",
+  "subgraphs": {
+    "budget80": "memlens_repro/outputs/kg_memory_32k_agent/retrieved_subgraphs",
+    "budget120": "memlens_repro/outputs_node_budget_sweep_20260618/budget_120/retrieved_subgraphs"
+  },
+  "baseline_outputs": {
+    "kg_hard_refusal_budget80": "memlens_repro/outputs/kg_memory_32k_agent",
+    "qwen_vl_caption_rag": "memlens_repro/outputs/qwen_vl_caption_rag_32k_agent",
+    "oracle_evidence": "memlens_repro/outputs/oracle_evidence_qwen25vl_32k_agent"
+  },
+  "new_outputs_root": "kg_retrieval/results",
+  "models": {
+    "llm": "",
+    "vlm": ""
+  },
+  "node_budgets": [80, 120],
+  "generation": {
+    "max_new_tokens": 128,
+    "dtype": "bfloat16",
+    "load_in_4bit": true
+  },
+  "primary_success_metrics": [
+    "overall_sub_em",
+    "overall_f1",
+    "answerable_refusal_rate",
+    "abstention_acc"
+  ]
+}

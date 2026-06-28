@@ -1,0 +1,29 @@
+{
+  "name": "typed_evidence",
+  "frozen_base": "runtime_routing/results/runtime_specialists/predictions.json",
+  "dataset": "memlens_repro/data/memlens_agent_subset/dataset_32k.json",
+  "graph_dir": "memlens_repro/outputs/kg_memory_32k_agent/graphs",
+  "image_dir": "memlens_repro/data/memlens/release_images",
+  "target_subtypes": [
+    "arithmetic",
+    "duration_comparison",
+    "entity",
+    "previnfo"
+  ],
+  "evaluator": "eval_v2.1",
+  "primary_endpoint": "overall_sub_em_v21_paired_delta",
+  "primary_test": "two_sided_exact_mcnemar",
+  "text_model": "Qwen2.5-7B-Instruct",
+  "vision_model": "Qwen2.5-VL-7B-Instruct",
+  "generation": {
+    "temperature": 0.0,
+    "do_sample": false,
+    "load_in_4bit": true
+  },
+  "fixed_limits": {
+    "purchase_candidates": 24,
+    "duration_candidates_per_duration": 18,
+    "visual_top_k": 3
+  },
+  "label_leakage": false
+}

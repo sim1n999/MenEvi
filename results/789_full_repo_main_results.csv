@@ -1,0 +1,7 @@
+scope,dataset_n,evaluator,method,n,sub_em_v21_pct,token_f1_v21_pct,source_file
+789题完整数据集,789,eval_v2.1,bm25_text,789,33.7136,38.9274,strong_baselines/results/dual_gpu1_validation/paper_strong_baselines.csv
+789题完整数据集,789,eval_v2.1,caption_rag,789,36.3752,40.8238,strong_baselines/results/dual_gpu1_validation/paper_strong_baselines.csv
+789题完整数据集,789,eval_v2.1,direct_lvlm,789,30.7985,36.2671,strong_baselines/results/dual_gpu1_validation/paper_strong_baselines.csv
+789题完整数据集,789,eval_v2.1,flat_mm_text,789,36.2484,41.2575,strong_baselines/results/dual_gpu1_validation/paper_strong_baselines.csv
+789题完整数据集,789,eval_v2.1,flat_mm_caption,789,36.3752,41.4645,strong_baselines/results/dual_gpu1_validation/paper_strong_baselines.csv
+789题完整数据集,789,eval_v2.1,mmkg_full,789,47.275,49.8966,strong_baselines/results/dual_gpu1_validation/paper_strong_baselines.csv

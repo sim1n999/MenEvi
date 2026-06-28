@@ -1,0 +1,10 @@
+{
+  "dataset": "MemLens-32K-full-789",
+  "graph_variants": ["no_edges", "no_state", "no_visual", "no_temporal"],
+  "gate_variants": ["always_replace", "reject_refusal", "preserve_support", "full_gate"],
+  "matched_node_budget": 120,
+  "matched_packet_budget": 80,
+  "primary_reference": "Length-curve evaluation 32K EviMem Full",
+  "analysis_role": "post_holdout_explanatory"
+}
+

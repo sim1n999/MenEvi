@@ -1,0 +1,121 @@
+{
+  "status": "frozen_for_one_formal_holdout_execution",
+  "frozen_at_utc": "2026-06-22T02:07:52.522207+00:00",
+  "git_commit": "unavailable",
+  "models": {
+    "text": "",
+    "vision": ""
+  },
+  "generation": {
+    "temperature": 0.0,
+    "do_sample": false,
+    "load_in_4bit": true
+  },
+  "method": {
+    "strategy": "i_visual_only_leakage_safe_gate_v1",
+    "visual_top_k": 3,
+    "target_subtypes": [
+      "entity",
+      "previnfo"
+    ],
+    "normalized_refusal_rejection": true,
+    "rank1_base_support_preservation": true,
+    "arithmetic_and_duration_excluded": true
+  },
+  "development_diagnostic": {
+    "overall": {
+      "count": 195,
+      "baseline_correct": 85,
+      "candidate_correct": 92,
+      "baseline_sub_em_v21": 0.4358974358974359,
+      "candidate_sub_em_v21": 0.4717948717948718,
+      "delta_sub_em_points": 3.58974358974359,
+      "baseline_f1_v21": 0.4512952005259698,
+      "candidate_f1_v21": 0.4741880341880342,
+      "delta_f1_points": 2.2892833662064405,
+      "wins": 8,
+      "losses": 1,
+      "net_wins": 7,
+      "both_correct": 84,
+      "both_wrong": 102,
+      "discordant_pairs": 9,
+      "mcnemar_exact_two_sided_p": 0.0390625
+    },
+    "paired_bootstrap": {
+      "count": 195,
+      "seed": 20260621,
+      "bootstrap_samples": 100000,
+      "delta_sub_em_points": 3.5897435897435894,
+      "paired_bootstrap_95_ci_points": [
+        1.0256410256410255,
+        6.666666666666667
+      ],
+      "bootstrap_probability_delta_le_zero": 0.00827,
+      "wins": 8,
+      "losses": 1
+    },
+    "posthoc_development_only": true
+  },
+  "holdout_assets": {
+    "status": "ready_for_freeze",
+    "holdout_count": 594,
+    "unique_image_count": 3699,
+    "caption_count": 3699,
+    "caption_cache_sha256": "40310ecd146407f532373799a01d320b8e971045b9b235bf30e19cd43da73907",
+    "asset_counts": {
+      "graphs": 594,
+      "subgraphs": 594,
+      "c_packets": 594,
+      "d_packets": 594,
+      "specialist_packets": 103
+    },
+    "asset_directory_sha256": {
+      "graphs": "2f8e5e331b105120576812e7909688d119af819cd633eb9486cc14d0ed1a71bd",
+      "subgraphs": "b2a07a4b614f073f403dc38ccfca73ab794aefb8417939eea2a0d84c2152a71d",
+      "c_packets": "107bf6db0c0b8be2d10873ef94402aef831580b6d44bd3f0b24b420e5f07f53e",
+      "d_packets": "b33a698de109dc5a87a95acd26252454da72af5d6ee98473e20caca6089febf0",
+      "specialist_packets": "8de0b7b02cb4ad8bd9e164faca56b727b1771fe51377d30da95dad5940fc0888"
+    },
+    "baseline_prompt_leakage_audit_passed": true,
+    "selection_uses_labels": false
+  },
+  "holdout_protocol": {
+    "holdout_count": 594,
+    "holdout_ids_sha256": "bce605d137655381f8bd2c417d85b288fecaec329dd5945af27251b9632006b9",
+    "formal_executions": 1
+  },
+  "file_sha256": {
+    "reliability_gate/config.json": "8c84efd019f3bcbd4a0455f6a43e8ef8063342170306421d17d0fdfefb8f53e4",
+    "reliability_gate/EXPERIMENT_DESIGN.md": "d707b824fc967365385739d33d6122e256fa3b2bb5b2ce6338abd8f30d5a800c",
+    "reliability_gate/scripts/apply_reliability_gate.py": "44f83b3ddbcfd71f0c172a09423b9469a051976f3c87f2d167e22e1e0e912d9f",
+    "reliability_gate/scripts/build_visual_packets.py": "be3b1b4cc3a17a6927dd4a0ba038a4ce3300a5b054ad8eb3864338cc0a0b3abc",
+    "reliability_gate/scripts/paired_stats.py": "aacac76b1974574bbada3b118de51f44d6c28494dbf49dc011165c14bb1d07d2",
+    "reliability_gate/scripts/holdout_guard.py": "3f480da99e1b2c2a4db77942389aa948de865ddd979d012067e2203175241588",
+    "reliability_gate/scripts/run_holdout.sh": "7912934d158b97fc9530b65649f9f4a1a4b29633d3a2964f47c7768c37a7b03c",
+    "holdout_validation/scripts/audit_prompt_leakage.py": "a1737cf264338265b1f049e25b04593af76057f3caa1180d8ceb9c4ec38422d9",
+    "holdout_validation/scripts/build_typed_evidence_v2.py": "61a22ded4a0c177227e51e275b53c14b3591222781e715fb9bd4f0368a5d4761",
+    "holdout_validation/scripts/run_typed_specialists_v2.py": "9f1a7c4c663eace32cb8bfd25910b6dde9dbbeb71570d8cb6d77c98f747b8cad",
+    "holdout_validation/prompts/typed_specialist_policy_v2.md": "e41dae9d2dcc37163a1100934b515696e9d117669baf49fa27616119f6356b62",
+    "holdout_validation/protocol/holdout_ids.json": "4ff0e149129140a35437b9590e311c6cfc8c0551cb842a52106f47b80e13eae7",
+    "holdout_validation/protocol/protocol_manifest.json": "54547057d6e6d6b19b6d0c3b52862f0db0a5778418cfa64e7966f38bcae2432f",
+    "typed_evidence/scripts/run_visual_inspection.py": "3234d0806ed195f226ffe6d1c41e32921072271fda5df497c6f790d85e575f0e",
+    "reliability_gate/scripts/build_caption_cache_resumable.py": "56802ce3f2ee7c4c3ab28af656c287f4906b3e0e8ca20ef0a3ed68c29160b81a",
+    "reliability_gate/scripts/build_label_blind_graphs.py": "eaa2e8fb9b9692c9700b0456c8a9dc024a282d5af5cdbc2706464b214fd07756",
+    "reliability_gate/scripts/sanitize_packets.py": "76c2242f7fbb8f0984d9c087a6a13409e1a1641e2120bcd76ec2b155981cbbde",
+    "reliability_gate/scripts/validate_holdout_assets.py": "3d7d8026305a4814ba1381f7845edb2c89330a88007d90017160fc198fe367c9",
+    "reliability_gate/scripts/run_prepare_holdout_assets.sh": "3cf1d92458ee3479a7c426116b5333759c575f6b5ec7bff57b41f711a441676e",
+    "reliability_gate/scripts/formal_run_guard.py": "1181a5a4f3b39c38b399bfc695fd4ea62a0453b179f8b8b017c5a6f25b94d805",
+    "reliability_gate/scripts/run_formal_holdout.sh": "7cbdd8c4f3379bae6081459a2c9f62364394f90a320eb44d26e5ae9b0b124a6f",
+    "memlens_repro/scripts/build_mmkg_memory.py": "f4291f2ec355c0299831fefd8d1acf67488be4f781851863052380468b646044",
+    "memlens_repro/scripts/experiment_utils.py": "d778956aae6ac392fe030f1b031c9cd8b2cab3f8709e3eadae36d9235bf00318",
+    "kg_retrieval/scripts/retrieve_kg_subgraphs.py": "1e8afd3f84ce4fedc1085f636a271952f29547f5aabb01bc00a16b4489a24c29",
+    "answer_evidence/scripts/build_answer_focused_packets.py": "3b8e38dfa01db19858b604f12e5b1d43ceece378c61096f1e1f8c4e8a321894c",
+    "visual_evidence/scripts/build_visual_ocr_packets.py": "8a70e2df697d4014326af9bd0b1f4ce522dc785d699d5f6f85cafacb4d92570b",
+    "runtime_routing/scripts/build_specialist_packets.py": "f190235648b8e459d7b7dce4fded9f48cfc8d50beace187984ea3fd8f83e0c19",
+    "runtime_routing/scripts/runtime_hybrid_answering.py": "9ed3dd7a4277611555484727ee8250680d683838e5e7c6238497da1366cbd38a",
+    "answer_evidence/prompts/answer_focused_policy.md": "c2a3185aa5537d84fa60b965c4f7d1c72809103f282eb722eb5afb5773505580",
+    "visual_evidence/prompts/type_aware_visual_ocr_policy.md": "079860d9baa6eba9aafcd6a5403b31cc728c3a9d999110f9ba6f98a050618d53",
+    "runtime_routing/prompts/duration_specialist_policy.md": "2cc26f83dcd2907a156c8ac67a4fcd4fec2c6b42db80f21cc6343f36aea9ed3f",
+    "runtime_routing/prompts/arithmetic_specialist_policy.md": "646a24c37691c083e157a74c334d8affd6589628310fdd805a83ac614f20d727"
+  }
+}

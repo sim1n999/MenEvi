@@ -1,0 +1,48 @@
+{
+  "name": "Visual-evidence evaluation - Visual/OCR Enhanced Type-Aware Evidence Packets",
+  "created": "2026-06-19",
+  "dataset": "memlens_repro/data/memlens_agent_subset/dataset_32k.json",
+  "inputs": {
+    "retrieval_budget120": "kg_retrieval/results/retrieval_budget120/retrieved_subgraphs",
+    "c_packet80": "answer_evidence/results/kg_answer_focused_packet80",
+    "baseline_v2": "answer_evidence/results/rescore_existing_v2"
+  },
+  "outputs_root": "visual_evidence/results",
+  "models": {
+    "llm": ""
+  },
+  "variants": [
+    {
+      "name": "kg_visual_ocr_packet80",
+      "kind": "model_run",
+      "packet_budget": 80,
+      "source_subgraphs": "kg_retrieval/results/retrieval_budget120/retrieved_subgraphs",
+      "primary_change": "force visual/OCR/attribute evidence for information_extraction"
+    },
+    {
+      "name": "kg_visual_ocr_packet80_prompt_only",
+      "kind": "prompt_only"
+    },
+    {
+      "name": "kg_visual_ocr_packet40",
+      "kind": "optional_ablation",
+      "packet_budget": 40
+    }
+  ],
+  "primary_success_metrics": [
+    "overall_sub_em_v2",
+    "overall_f1_v2",
+    "information_extraction_sub_em_v2",
+    "information_extraction_refusal_rate_v2",
+    "answerable_refusal_rate_v2",
+    "abstention_acc_v2",
+    "avg_input_len"
+  ],
+  "success_thresholds": {
+    "overall_sub_em_v2": 42.0,
+    "overall_f1_v2": 43.0,
+    "information_extraction_sub_em_v2": 25.0,
+    "answer_refusal_accuracy_v2": 95.0,
+    "avg_input_len_soft_max": 8000
+  }
+}
